@@ -1,0 +1,75 @@
+<!-- Login -->
+<section class="w-full h-full flex flex-col lg:flex-row relative">
+    <!-- Imagen -->
+    <div class="w-full lg:w-2/4 h-64 lg:h-full relative">
+        <img src="/wallpaper-login.webp" class="h-full w-full object-cover" />
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center font-Poppins">
+            <!-- Mensajes -->
+            <div class="w-11/12 sm:w-4/5 text-white flex flex-col justify-center items-center relative">
+                @for (message of messages; track $index;) {
+                    <p 
+                        [class.opacity-100]="$index === currentMessageIndex"
+                        [class.opacity-0]="$index !== currentMessageIndex"
+                        [class.scale-100]="$index === currentMessageIndex"
+                        [class.scale-95]="$index !== currentMessageIndex"
+                        class="font-bold text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-4xl 2xl:text-6xl tracking-tight transition-all transform duration-1000 ease-in-out absolute inset-0 flex items-center justify-center">
+                        {{ message }}
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario de inicio de sesión -->
+    <div class="w-full lg:w-2/4 flex flex-col items-center justify-center p-8 lg:p-16 font-Poppins">
+        <img src="/logo-elfaro.jpg" class="lg:h-2/6 xs:h-32">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-8 text-prussian-blue-900">Ingresa a tu cuenta</h1>
+
+        <!-- Formulario Reactivo -->
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="w-full max-w-sm space-y-4 flex flex-col">
+            <!-- Campo de correo electrónico -->
+            <div class="relative">
+                <label for="email" class="text-gray-700 text-sm mb-1 block font-semibold">Correo electrónico</label>
+                <input 
+                    formControlName="email"
+                    class="w-full border border-gray-300 rounded-lg py-2 px-4 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:border-prussian-blue-500 focus:ring-1 focus:ring-prussian-blue-500 transition duration-300"
+                    id="email" 
+                    type="email" 
+                    placeholder="tucorreo@ejemplo.com"
+                />
+                <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-red-500 text-xs italic mt-1">
+                    Por favor, ingresa un correo válido.
+                </div>
+            </div>
+
+            <!-- Campo de contraseña -->
+            <div class="relative">
+                <label for="password" class="text-gray-700 text-sm mb-1 block font-semibold">Contraseña</label>
+                <input 
+                    formControlName="password"
+                    class="w-full border border-gray-300 rounded-lg py-2 px-4 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:border-prussian-blue-500 focus:ring-1 focus:ring-prussian-blue-500 transition duration-300"
+                    id="password" 
+                    type="password" 
+                    placeholder="••••••••"
+                />
+                <div class="flex flex-col justify-start">
+                    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-red-500 text-xs italic mt-1">
+                        La contraseña debe tener al menos 6 caracteres.
+                    </div>
+                    <a href="#" class="self-start text-sm text-prussian-blue-700 hover:underline">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+
+            <!-- Botón de inicio de sesión -->
+            <button 
+                class="w-full bg-prussian-blue-900 text-white py-3 rounded-lg hover:bg-prussian-blue-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-prussian-blue-500"
+                type="submit">
+                Iniciar sesión
+            </button>
+        </form>
+
+        <!-- Enlace para crear una cuenta -->
+        <p class="mt-6 text-sm text-gray-500">¿No tienes una cuenta? <a href="#" class="text-prussian-blue-700 font-semibold hover:underline">Regístrate</a></p>
+    </div>
+</section>
