@@ -1,0 +1,100 @@
+<div class="container mx-auto p-8 bg-white rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold mb-6">Registrar Nuevo Catedrático</h2>
+
+    <form [formGroup]="catedraticoForm" (ngSubmit)="onSubmit()">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Nombre -->
+            <div class="form-group">
+                <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+                <input id="nombre" type="text" formControlName="nombre" class="input-field"
+                    placeholder="Nombre del catedrático">
+                <div *ngIf="catedraticoForm.controls['nombre'].invalid && catedraticoForm.controls['nombre'].touched"
+                    class="text-red-500 text-sm">
+                    Nombre es requerido y debe tener al menos 3 caracteres.
+                </div>
+            </div>
+
+            <!-- Apellidos -->
+            <div class="form-group">
+                <label for="apellidos" class="block text-sm font-medium text-gray-700">Apellidos</label>
+                <input id="apellidos" type="text" formControlName="apellidos" class="input-field"
+                    placeholder="Apellidos del catedrático">
+                <div *ngIf="catedraticoForm.controls['apellidos'].invalid && catedraticoForm.controls['apellidos'].touched"
+                    class="text-red-500 text-sm">
+                    Apellidos son requeridos y deben tener al menos 3 caracteres.
+                </div>
+            </div>
+
+            <!-- Edad -->
+            <div class="form-group">
+                <label for="edad" class="block text-sm font-medium text-gray-700">Edad</label>
+                <input id="edad" type="number" formControlName="edad" class="input-field"
+                    placeholder="Edad del catedrático">
+                <div *ngIf="catedraticoForm.controls['edad'].invalid && catedraticoForm.controls['edad'].touched"
+                    class="text-red-500 text-sm">
+                    Edad es requerida (mínimo 18 años).
+                </div>
+            </div>
+
+            <!-- Correo Electrónico -->
+            <div class="form-group">
+                <label for="correo" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                <input id="correo" type="email" formControlName="correo" class="input-field"
+                    placeholder="Correo del catedrático">
+                <div *ngIf="catedraticoForm.controls['correo'].invalid && catedraticoForm.controls['correo'].touched"
+                    class="text-red-500 text-sm">
+                    Debe ser un correo válido.
+                </div>
+            </div>
+
+            <!-- Dirección -->
+            <div class="form-group">
+                <label for="direccion" class="block text-sm font-medium text-gray-700">Dirección</label>
+                <input id="direccion" type="text" formControlName="direccion" class="input-field"
+                    placeholder="Dirección del catedrático">
+                <div *ngIf="catedraticoForm.controls['direccion'].invalid && catedraticoForm.controls['direccion'].touched"
+                    class="text-red-500 text-sm">
+                    Dirección es requerida.
+                </div>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="form-group">
+                <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono</label>
+                <input id="telefono" type="text" formControlName="telefono" class="input-field"
+                    placeholder="Teléfono (10 dígitos)">
+                <div *ngIf="catedraticoForm.controls['telefono'].invalid && catedraticoForm.controls['telefono'].touched"
+                    class="text-red-500 text-sm">
+                    El número de teléfono debe ser de 10 dígitos.
+                </div>
+            </div>
+
+            <!-- Especialidad -->
+            <div class="form-group">
+                <label for="especialidad" class="block text-sm font-medium text-gray-700">Especialidad</label>
+                <input id="especialidad" type="text" formControlName="especialidad" class="input-field"
+                    placeholder="Especialidad del catedrático">
+                <div *ngIf="catedraticoForm.controls['especialidad'].invalid && catedraticoForm.controls['especialidad'].touched"
+                    class="text-red-500 text-sm">
+                    Especialidad es requerida.
+                </div>
+            </div>
+
+            <!-- Fecha de Ingreso -->
+            <div class="form-group">
+                <label for="fechaIngreso" class="block text-sm font-medium text-gray-700">Fecha de Ingreso</label>
+                <input id="fechaIngreso" type="date" formControlName="fechaIngreso" class="input-field">
+                <div *ngIf="catedraticoForm.controls['fechaIngreso'].invalid && catedraticoForm.controls['fechaIngreso'].touched"
+                    class="text-red-500 text-sm">
+                    La fecha de ingreso es requerida.
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6">
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                Registrar Catedrático
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,20 @@
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  input.ng-invalid.ng-touched {
+    border-color: #e3342f;
+  }
+  
+  input.ng-valid.ng-touched {
+    border-color: #38c172;
+  }
+  

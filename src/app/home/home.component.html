@@ -1,0 +1,127 @@
+<div class="flex h-full w-full">
+    <!-- Sidebar -->
+    <div class="relative h-full flex flex-col bg-zinc-900 border-r border-zinc-800 shadow-2xl overflow-hidden">
+      <!-- Header -->
+      <section class="sticky top-0 z-10 px-4 py-2 flex items-center justify-between bg-zinc-900">
+        <div class="flex items-center space-x-3">
+          <img src="/logo-elfaro.jpg" alt="Logo Colegio El Faro" class="h-10 object-contain">
+          <h1 class="text-sm font-extrabold tracking-widest text-[#61A5C2] font-poppins">
+            Colegio El Faro
+          </h1>
+        </div>
+      </section>
+  
+      <!-- Main Section -->
+      <section class="flex-1 overflow-auto px-3 py-4">
+        <!-- Menu List -->
+        <ul class="text-stone-200 space-y-4 font-poppins" aria-label="item-list">
+          <li>
+            <a [routerLink]="['/inicio']" class="px-5 py-2 flex items-center space-x-3 hover:text-blue-300 transition-all duration-300 cursor-pointer">
+              <i class="fas fa-home"></i> <!-- FontAwesome Icon -->
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/inicio/alumnos']" class="px-5 py-2 flex items-center space-x-3 hover:text-blue-300 transition-all duration-300 cursor-pointer">
+              <i class="fas fa-users"></i> <!-- FontAwesome Icon -->
+              <span>Alumnos</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/inicio/catedraticos']" class="px-5 py-2 flex items-center space-x-3 hover:text-blue-300 transition-all duration-300 cursor-pointer">
+              <i class="fas fa-chalkboard-teacher"></i> <!-- FontAwesome Icon -->
+              <span>Catedráticos</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+  
+      <!-- Footer -->
+      <footer class="text-gray-400 text-xs px-4 py-5">
+        <div class="flex justify-between">
+          <span>&copy; Colegio El Faro</span>
+          <span>Version 1.0</span>
+        </div>
+      </footer>
+    </div>
+  
+    <!-- Main Content -->
+    
+    <div class="flex-1 p-8 bg-white">
+      <app-header class="gap-2" />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Welcome Message -->
+        <div class="col-span-1 md:col-span-2">
+          <div class="bg-blue-50 p-4 rounded-lg shadow">
+            <h2 class="text-xl font-bold text-blue-600">Bienvenido al sistema de Colegio el faro</h2>
+            <p class="mt-2 text-gray-600">Aquí encontrarás todo lo necesario para gestionar alumnos, catedráticos y más.</p>
+          </div>
+        </div>
+  
+        <!-- Quick Links -->
+        <div class="col-span-1">
+          <div class="bg-gray-50 p-4 rounded-lg shadow">
+            <h3 class="text-lg font-semibold text-gray-700 mb-4">Accesos Rápidos</h3>
+            <ul class="space-y-2">
+              <li>
+                <a [routerLink]="['/inicio/alumnos']" class="flex items-center space-x-2 text-blue-500 hover:text-blue-600">
+                  <i class="fas fa-users"></i>
+                  <span>Gestión de Alumnos</span>
+                </a>
+              </li>
+              <li>
+                <a [routerLink]="['/inicio/catedraticos']" class="flex items-center space-x-2 text-blue-500 hover:text-blue-600">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                  <span>Gestión de Catedráticos</span>
+                </a>
+              </li>
+              <li>
+                <a [routerLink]="['/inicio/reportes']" class="flex items-center space-x-2 text-blue-500 hover:text-blue-600">
+                  <i class="fas fa-chart-line"></i>
+                  <span>Ver Reportes</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Recent Activities -->
+        <div class="col-span-1 md:col-span-2">
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h3 class="text-lg font-semibold text-gray-700 mb-4">Actividades Recientes</h3>
+            <ul class="space-y-2">
+              <li class="flex justify-between">
+                <span>Nuevo alumno registrado: <strong>Juan Pérez</strong></span>
+                <span class="text-gray-400 text-sm">Hace 10 minutos</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Actualización en la lista de catedráticos</span>
+                <span class="text-gray-400 text-sm">Hace 30 minutos</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Nuevo reporte generado por: <strong>María García</strong></span>
+                <span class="text-gray-400 text-sm">Hace 1 hora</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Statistics -->
+        <div class="col-span-1">
+          <div class="bg-white p-4 rounded-lg shadow">
+            <h3 class="text-lg font-semibold text-gray-700 mb-4">Estadísticas</h3>
+            <div class="flex space-x-4">
+              <div class="text-center">
+                <h4 class="text-2xl font-bold text-gray-800">120</h4>
+                <p class="text-gray-500">Alumnos Registrados</p>
+              </div>
+              <div class="text-center">
+                <h4 class="text-2xl font-bold text-gray-800">35</h4>
+                <p class="text-gray-500">Catedráticos Activos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
